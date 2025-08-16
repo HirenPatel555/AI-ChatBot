@@ -1,0 +1,170 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Chat container fills screen */
+.chat-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    /* max-width: 900px; */
+    margin: auto;
+    padding: 10px;
+}
+
+/* Header with hover */
+.chat-header {
+    padding: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+    /* background: #111; */
+    border-radius: 8px;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.chat-header:hover {
+    /* background: #222; */
+    color: rgb(255, 255, 255);
+    transform: scale(1.02);
+    cursor: pointer;
+}
+
+/* Chat box scrollable area */
+#chat-box {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    padding-bottom: 30px;
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%; /* Fill parent container */
+    max-width: 100%; /* No restriction */
+    box-sizing: border-box;
+}
+
+/* User messages on the right */
+.user-message {
+    background: #222;
+    padding: 12px 16px;
+    border-radius: 8px;
+    align-self: flex-end;
+    max-width: 90%; /* Messages take more space */
+    white-space: pre-wrap;
+    transition: transform 0.2s ease;
+}
+
+.user-message:hover {
+    transform: translateY(-2px);
+    background: #2e2e2e;
+}
+
+/* Bot messages on the left */
+.bot-message {
+    background: #1a1a1a;
+    padding: 12px 16px;
+    border-radius: 8px;
+    align-self: flex-start;
+    max-width: 90%; /* Messages take more space */
+    white-space: pre-wrap;
+    transition: transform 0.2s ease;
+}
+
+.bot-message:hover {
+    transform: translateY(-2px);
+    background: #242424;
+}
+
+
+/* Typing effect */
+.typing {
+    font-style: italic;
+    opacity: 0.7;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 0.3; }
+}
+
+/* Input area fixed at bottom */
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    bottom: 0;
+    gap: 10px;
+    padding: 15px;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 900px; /* keeps it nice on large screens */
+}
+
+/* Wider input */
+.input-container input {
+    flex: 1; /* let it grow more */
+    min-width: 75%; /* makes it wider by default */
+    padding: 14px 18px;
+    border-radius: 50px;
+    border: none;
+    background: #222;
+    color: #fff;
+    font-size: 1rem;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-container input:hover {
+    background: #2a2a2a;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.15);
+}
+
+.input-container input:focus {
+    outline: none;
+    background: #2f2f2f;
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.4);
+}
+
+/* Markdown styling inside bot messages */
+.bot-message strong {
+    font-weight: bold;
+}
+
+.bot-message code {
+    background: #333;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-family: monospace;
+    color: #fffb91;
+}
+
+.bot-message pre {
+    background: #222;
+    padding: 10px;
+    border-radius: 6px;
+    overflow-x: auto;
+}
+
+.bot-message ul {
+    padding-left: 20px;
+    margin: 5px 0;
+}
