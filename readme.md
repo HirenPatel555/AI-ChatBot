@@ -24,7 +24,7 @@ This project demonstrates:
 ---
 
 ## Clone the Repository & Run the Project
-**Just open index.html in your browser**
+**Just open index.php in your browser**
 
 ## 🔄 Message Flow
 `User Input → Display in Chat → API Request → AI Processes → Bot Reply → Append to Chat`
